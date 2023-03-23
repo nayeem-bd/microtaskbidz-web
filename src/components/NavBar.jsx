@@ -42,7 +42,7 @@ const NavBar = (props) => {
                         <NavLink className='nav-link' to='/tasks'>
                             Tasks
                         </NavLink>
-                        {jwt ? (
+                        {(jwt!==undefined && jwt) ? (
                             <NavLink className='nav-link' to='/profile'>
                                 Profile
                             </NavLink>
@@ -51,7 +51,7 @@ const NavBar = (props) => {
                                 Login
                             </NavLink>
                         )}
-                        {jwt ? (
+                        {(jwt!==undefined && jwt) ? (
                             <NavLink className='nav-link' onClick={logOut}>
                                 Log Out
                             </NavLink>
