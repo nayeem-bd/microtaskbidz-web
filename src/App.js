@@ -6,7 +6,7 @@ import Tasks from './components/Tasks';
 import Login from './components/Login';
 import { withCookies } from 'react-cookie';
 import Profile from './components/Profile';
-import jwtDecode  from 'jwt-decode';
+import jwtDecode from 'jwt-decode';
 
 class App extends Component {
   state = {
@@ -19,7 +19,8 @@ class App extends Component {
   }
 
   getCookie = (field) => {
-    return this.props.cookies.get(field);
+    const cookie = this.props.cookies.get(field);
+    return cookie ? cookie : '';
   }
 
   updateJwt = (jwt) => {
@@ -27,7 +28,7 @@ class App extends Component {
     this.setCookie('jwt', jwt);
   }
 
-  handleProfile = ()=>{
+  handleProfile = () => {
     return jwtDecode(this.getCookie('jwt'));
   }
 
@@ -45,7 +46,7 @@ class App extends Component {
           <Routes>
             <Route path='/tasks' element={<Tasks />} />
             <Route path='/login' element={<Login updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie} />} />
-            <Route path='/profile' element={<Profile getData = {this.handleProfile} />} />
+            <Route path='/profile' element={<Profile getData={this.handleProfile} />} />
             <Route path='/' element={<Home />} />
           </Routes>
         </div>
