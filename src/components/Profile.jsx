@@ -2,7 +2,10 @@ import React from "react";
 
 const Profile = (props) => {
     const { getData } = props;
-    const data = { ...getData() };
+    let data = {};
+    try {
+        data = { ...getData() };
+    } catch (e) {}
 
     return (
         <React.Fragment>

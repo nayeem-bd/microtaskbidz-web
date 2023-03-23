@@ -20,7 +20,7 @@ class App extends Component {
 
   getCookie = (field) => {
     const cookie = this.props.cookies.get(field);
-    return cookie ? cookie : '';
+    return cookie=== 'undefined' ? '' : cookie;
   }
 
   updateJwt = (jwt) => {
