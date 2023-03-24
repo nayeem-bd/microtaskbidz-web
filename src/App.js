@@ -43,7 +43,7 @@ class App extends Component {
     return (
       <div className='mx-5'>
         <NavBar jwt={this.state.jwt} updateJwt={this.updateJwt} />
-        <div className='content mt-4'>
+        <div className='content mt-4 mx-2'>
           <Routes>
             <Route path='/tasks' element={<Tasks />} />
             <Route path='/login' element={<Login updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie} />} />
