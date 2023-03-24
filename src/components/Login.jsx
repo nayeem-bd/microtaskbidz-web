@@ -134,7 +134,7 @@ const Login = (props) => {
                                 <p className='small fw-bold mt-2 pt-1 mb-0'>
                                     Don't have an account?{" "}
                                     <Link
-                                        href='/signup'
+                                        to='/signup'
                                         className='link-danger'
                                     >
                                         Sign Up
