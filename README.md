@@ -1,5 +1,6 @@
 # Demo Link of MicroTaskBidz
-[MicroTaskBidz](https://microtaskbidz-web.vercel.app/)
+[MicroTaskBidz](https://microtaskbidz-web.vercel.app/){:target="_blank" rel="noopener"}
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
