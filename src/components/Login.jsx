@@ -20,6 +20,7 @@ const Login = (props) => {
             props.setCookie('jwt',res.data.token);
             props.updateJwt(res.data.token);
             navigate("/");
+            alert('Logged In Successfully');
         }
        }).catch(e=>{
         console.log('error',e);

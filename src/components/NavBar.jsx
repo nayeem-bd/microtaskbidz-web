@@ -8,10 +8,11 @@ const NavBar = (props) => {
     const logOut = () => {
         updateJwt('');
         navigate('/');
+        alert('Logged Out Successfully');
     };
 
     return (
-        <nav className='navbar navbar-expand-lg bg-body-tertiary'>
+        <nav className='navbar navbar-expand-lg bg-body-tertiary rounded' style={{backgroundColor: "#e3f2fd"}}>
             <div className='container-fluid'>
                 <Link className='navbar-brand' to='/'>
                     MicroTaskBidz

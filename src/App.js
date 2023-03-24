@@ -7,6 +7,7 @@ import Login from './components/Login';
 import { withCookies } from 'react-cookie';
 import Profile from './components/Profile';
 import jwtDecode from 'jwt-decode';
+import SignUp from './components/SignUp';
 
 class App extends Component {
   state = {
@@ -20,7 +21,7 @@ class App extends Component {
 
   getCookie = (field) => {
     const cookie = this.props.cookies.get(field);
-    return cookie=== 'undefined' ? '' : cookie;
+    return cookie === 'undefined' ? '' : cookie;
   }
 
   updateJwt = (jwt) => {
@@ -46,6 +47,7 @@ class App extends Component {
           <Routes>
             <Route path='/tasks' element={<Tasks />} />
             <Route path='/login' element={<Login updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie} />} />
+            <Route path='/signup' element={<SignUp updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie}/>} />
             <Route path='/profile' element={<Profile getData={this.handleProfile} />} />
             <Route path='/' element={<Home />} />
           </Routes>
