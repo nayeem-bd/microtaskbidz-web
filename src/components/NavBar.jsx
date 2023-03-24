@@ -34,7 +34,7 @@ const NavBar = (props) => {
                 >
                     <div className='navbar-nav mx-4'>
                         <NavLink
-                            className='nav-link active'
+                            className='nav-link'
                             aria-current='page'
                             to='/'
                         >
