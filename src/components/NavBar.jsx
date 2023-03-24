@@ -12,9 +12,9 @@ const NavBar = (props) => {
     };
 
     return (
-        <nav className='navbar navbar-expand-lg bg-body-tertiary rounded' style={{backgroundColor: "#e3f2fd"}}>
+        <nav className='navbar navbar-expand-lg bg-body-tertiary rounded mt-3'>
             <div className='container-fluid'>
-                <Link className='navbar-brand' to='/'>
+                <Link className='navbar-brand fw-bold' to='/'>
                     MicroTaskBidz
                 </Link>
                 <button
@@ -32,7 +32,7 @@ const NavBar = (props) => {
                     className='collapse navbar-collapse justify-content-end'
                     id='navbarNavAltMarkup'
                 >
-                    <div className='navbar-nav'>
+                    <div className='navbar-nav mx-4'>
                         <NavLink
                             className='nav-link active'
                             aria-current='page'
@@ -40,24 +40,24 @@ const NavBar = (props) => {
                         >
                             Home
                         </NavLink>
-                        <NavLink className='nav-link' to='/tasks'>
+                        <NavLink className='nav-link mx-3' to='/tasks'>
                             Tasks
                         </NavLink>
                         {jwt ? (
-                            <NavLink className='nav-link' to='/profile'>
+                            <NavLink className='nav-link mx-3 ms-1' to='/profile'>
                                 Profile
                             </NavLink>
                         ) : (
-                            <NavLink className='nav-link' to='/login'>
+                            <NavLink className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50' to='/login'>
                                 Login
                             </NavLink>
                         )}
                         {jwt ? (
-                            <NavLink className='nav-link' onClick={logOut}>
+                            <NavLink className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50' onClick={logOut}>
                                 Log Out
                             </NavLink>
                         ) : (
-                            <NavLink className='nav-link' to='/signup'>
+                            <NavLink className='nav-link bg-primary px-4 rounded ms-2' to='/signup' style={{color:'white'}}>
                                 Sign Up
                             </NavLink>
                         )}
