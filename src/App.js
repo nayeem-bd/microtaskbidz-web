@@ -35,9 +35,8 @@ class App extends Component {
 
   componentDidMount() {
     this.updateJwt(this.getCookie('jwt'));
+    document.title = 'MircoTaskBidz'
   }
-
-
 
   render() {
     return (
