@@ -46,7 +46,7 @@ class App extends Component {
           <Routes>
             <Route path='/tasks' element={<Tasks />} />
             <Route path='/login' element={<Login updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie} />} />
-            <Route path='/signup' element={<SignUp updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie}/>} />
+            <Route path='/signup' element={<SignUp updateJwt={this.updateJwt} getCookie={this.getCookie} setCookie={this.setCookie} />} />
             <Route path='/profile' element={<Profile getData={this.handleProfile} />} />
             <Route path='/' element={<Home />} />
           </Routes>

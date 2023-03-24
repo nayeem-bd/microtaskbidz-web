@@ -84,6 +84,7 @@ const SignUp = (props) => {
                                     className='form-control form-control-lg'
                                     placeholder='Enter Full Name'
                                     ref={name}
+                                    required
                                 />
                                 <label
                                     className='form-label mt-1'
@@ -99,6 +100,7 @@ const SignUp = (props) => {
                                     className='form-control form-control-lg'
                                     placeholder='Enter a valid email address'
                                     ref={email}
+                                    required
                                 />
                                 <label
                                     className='form-label mt-1'
@@ -115,6 +117,7 @@ const SignUp = (props) => {
                                     className='form-control form-control-lg'
                                     placeholder='Enter password'
                                     ref={password}
+                                    required
                                 />
                                 <label
                                     className='form-label mt-1'
@@ -125,13 +128,12 @@ const SignUp = (props) => {
                             </div>
                             <div className='text-center text-lg-start mt-4 pt-2'>
                                 <button
-                                    type='button'
+                                    type='submit'
                                     className='btn btn-primary btn-lg text-center'
                                     style={{
                                         paddingLeft: "2.5rem",
                                         paddingRight: "2.5rem",
                                     }}
-                                    onClick={handleSubmit}
                                 >
                                     Sign Up
                                 </button>

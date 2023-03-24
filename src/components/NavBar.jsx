@@ -1,14 +1,14 @@
 import React from "react";
-import { NavLink, Link,useNavigate  } from "react-router-dom";
+import { NavLink, Link, useNavigate } from "react-router-dom";
 
 const NavBar = (props) => {
     const { jwt, updateJwt } = props;
     const navigate = useNavigate();
 
     const logOut = () => {
-        updateJwt('');
-        navigate('/');
-        alert('Logged Out Successfully');
+        updateJwt("");
+        navigate("/");
+        alert("Logged Out Successfully");
     };
 
     return (
@@ -44,20 +44,33 @@ const NavBar = (props) => {
                             Tasks
                         </NavLink>
                         {jwt ? (
-                            <NavLink className='nav-link mx-3 ms-1' to='/profile'>
+                            <NavLink
+                                className='nav-link mx-3 ms-1'
+                                to='/profile'
+                            >
                                 Profile
                             </NavLink>
                         ) : (
-                            <NavLink className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50' to='/login'>
+                            <NavLink
+                                className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50'
+                                to='/login'
+                            >
                                 Login
                             </NavLink>
                         )}
                         {jwt ? (
-                            <NavLink className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50' onClick={logOut}>
+                            <NavLink
+                                className='nav-link mx-3 px-4 border rounded border-primary border-opacity-50'
+                                onClick={logOut}
+                            >
                                 Log Out
                             </NavLink>
                         ) : (
-                            <NavLink className='nav-link bg-primary px-4 rounded ms-2' to='/signup' style={{color:'white'}}>
+                            <NavLink
+                                className='nav-link bg-primary px-4 rounded ms-2'
+                                to='/signup'
+                                style={{ color: "white" }}
+                            >
                                 Sign Up
                             </NavLink>
                         )}

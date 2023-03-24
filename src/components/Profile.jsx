@@ -9,7 +9,7 @@ const Profile = (props) => {
         data = { ...getData() };
     } catch (e) {}
     useEffect(() => {
-        if (!data.email && !data.name) {    
+        if (!data.email && !data.name) {
             return navigate("/");
         }
     });

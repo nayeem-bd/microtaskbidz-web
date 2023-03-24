@@ -71,6 +71,7 @@ const Login = (props) => {
                                     className='form-control form-control-lg'
                                     placeholder='Enter a valid email address'
                                     ref={email}
+                                    required
                                 />
                                 <label
                                     className='form-label mt-1'
@@ -87,6 +88,7 @@ const Login = (props) => {
                                     className='form-control form-control-lg'
                                     placeholder='Enter password'
                                     ref={password}
+                                    required
                                 />
                                 <label
                                     className='form-label mt-1'
@@ -121,22 +123,18 @@ const Login = (props) => {
 
                             <div className='text-center text-lg-start mt-4 pt-2'>
                                 <button
-                                    type='button'
+                                    type='submit'
                                     className='btn btn-primary btn-lg text-center'
                                     style={{
                                         paddingLeft: "2.5rem",
                                         paddingRight: "2.5rem",
                                     }}
-                                    onClick={handleSubmit}
                                 >
                                     Login
                                 </button>
                                 <p className='small fw-bold mt-2 pt-1 mb-0'>
                                     Don't have an account?{" "}
-                                    <Link
-                                        to='/signup'
-                                        className='link-danger'
-                                    >
+                                    <Link to='/signup' className='link-danger'>
                                         Sign Up
                                     </Link>
                                 </p>
