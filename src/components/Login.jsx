@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 
 const Login = (props) => {
     const email = useRef();
@@ -54,9 +54,7 @@ const Login = (props) => {
                                     Sign in with
                                 </p>
                                 <i className='fa fa-facebook-square fa-2x mx-1'></i>
-
                                 <i className='fa fa-twitter-square fa-2x mx-1'></i>
-
                                 <i className='fa fa-google fa-2x mx-1'></i>
                             </div>
 
@@ -75,7 +73,7 @@ const Login = (props) => {
                                     ref={email}
                                 />
                                 <label
-                                    className='form-label'
+                                    className='form-label mt-1'
                                     htmlFor='form3Example3'
                                 >
                                     Email address
@@ -91,7 +89,7 @@ const Login = (props) => {
                                     ref={password}
                                 />
                                 <label
-                                    className='form-label'
+                                    className='form-label mt-1'
                                     htmlFor='form3Example4'
                                 >
                                     Password
@@ -113,9 +111,9 @@ const Login = (props) => {
                                         Remember me
                                     </label>
                                 </div>
-                                <a href='#!' className='text-body'>
+                                <Link href='#!' className='text-body text-decoration-none '>
                                     Forgot password?
-                                </a>
+                                </Link>
                             </div>
 
                             <div className='text-center text-lg-start mt-4 pt-2'>
@@ -132,9 +130,9 @@ const Login = (props) => {
                                 </button>
                                 <p className='small fw-bold mt-2 pt-1 mb-0'>
                                     Don't have an account?{" "}
-                                    <a href='/signup' className='link-danger'>
+                                    <Link href='/signup' className='link-danger'>
                                         Sign Up
-                                    </a>
+                                    </Link>
                                 </p>
                             </div>
                         </form>
