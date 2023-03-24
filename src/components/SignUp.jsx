@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const SignUp = (props) => {
     const email = useRef();
@@ -68,9 +68,7 @@ const SignUp = (props) => {
                                     Sign in with
                                 </p>
                                 <i className='fa fa-facebook-square fa-2x mx-1'></i>
-
                                 <i className='fa fa-twitter-square fa-2x mx-1'></i>
-
                                 <i className='fa fa-google fa-2x mx-1'></i>
                             </div>
 
@@ -82,14 +80,14 @@ const SignUp = (props) => {
                             <div className='form-outline mb-4'>
                                 <input
                                     type='text'
-                                    id='form3Example3'
+                                    id='nameInput'
                                     className='form-control form-control-lg'
                                     placeholder='Enter Full Name'
                                     ref={name}
                                 />
                                 <label
-                                    className='form-label'
-                                    htmlFor='form3Example3'
+                                    className='form-label mt-1'
+                                    htmlFor='nameInput'
                                 >
                                     Full Name
                                 </label>
@@ -97,14 +95,14 @@ const SignUp = (props) => {
                             <div className='form-outline mb-4'>
                                 <input
                                     type='email'
-                                    id='form3Example3'
+                                    id='emailInput'
                                     className='form-control form-control-lg'
                                     placeholder='Enter a valid email address'
                                     ref={email}
                                 />
                                 <label
-                                    className='form-label'
-                                    htmlFor='form3Example3'
+                                    className='form-label mt-1'
+                                    htmlFor='emailInput'
                                 >
                                     Email address
                                 </label>
@@ -113,39 +111,18 @@ const SignUp = (props) => {
                             <div className='form-outline mb-3'>
                                 <input
                                     type='password'
-                                    id='form3Example4'
+                                    id='passwordInput'
                                     className='form-control form-control-lg'
                                     placeholder='Enter password'
                                     ref={password}
                                 />
                                 <label
-                                    className='form-label'
-                                    htmlFor='form3Example4'
+                                    className='form-label mt-1'
+                                    htmlFor='passwordInput'
                                 >
                                     Password
                                 </label>
                             </div>
-
-                            <div className='d-flex justify-content-between align-items-center'>
-                                <div className='form-check mb-0'>
-                                    <input
-                                        className='form-check-input me-2'
-                                        type='checkbox'
-                                        value=''
-                                        id='form2Example3'
-                                    />
-                                    <label
-                                        className='form-check-label'
-                                        htmlFor='form2Example3'
-                                    >
-                                        Remember me
-                                    </label>
-                                </div>
-                                <a href='#!' className='text-body'>
-                                    Forgot password?
-                                </a>
-                            </div>
-
                             <div className='text-center text-lg-start mt-4 pt-2'>
                                 <button
                                     type='button'
@@ -160,9 +137,9 @@ const SignUp = (props) => {
                                 </button>
                                 <p className='small fw-bold mt-2 pt-1 mb-0'>
                                     Already have an account?{" "}
-                                    <a href='/login' className='link-danger'>
+                                    <Link to='/login' className='link-danger'>
                                         Login
-                                    </a>
+                                    </Link>
                                 </p>
                             </div>
                         </form>
