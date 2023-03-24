@@ -1,5 +1,5 @@
-import React, { useRef ,useEffect} from "react";
-import axios from 'axios';
+import React, { useRef, useEffect } from "react";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
@@ -7,69 +7,141 @@ const Login = (props) => {
     const password = useRef();
     const navigate = useNavigate();
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         console.log(email.current.value, password.current.value);
-       axios.post('https://microtaskbidz.cyclic.app/user/signin',{
-        "email":`${email.current.value}`,
-        "password":`${password.current.value}`
-       }).then(res=>{
-        console.log(res);
-        if(res.status===200){
-            localStorage.setItem('token',res.data.token);
-            props.setCookie('jwt',res.data.token);
-            props.updateJwt(res.data.token);
-            navigate("/");
-            alert('Logged In Successfully');
-        }
-       }).catch(e=>{
-        console.log('error',e);
-       })
+        axios
+            .post("https://microtaskbidz.cyclic.app/user/signin", {
+                email: `${email.current.value}`,
+                password: `${password.current.value}`,
+            })
+            .then((res) => {
+                console.log(res);
+                if (res.status === 200) {
+                    localStorage.setItem("token", res.data.token);
+                    props.setCookie("jwt", res.data.token);
+                    props.updateJwt(res.data.token);
+                    navigate("/");
+                    alert("Logged In Successfully");
+                }
+            })
+            .catch((e) => {
+                console.log("error", e);
+            });
     };
 
-    useEffect(()=>{
-       if(props.getCookie('jwt')){
-            navigate('/');
-       }
-    })
+    useEffect(() => {
+        if (props.getCookie("jwt")) {
+            navigate("/");
+        }
+    });
 
     return (
-        <div className='row mt-2' style={{justifyContent:'center'}}>
-            <form className='col-3' onSubmit={handleSubmit}>
-                <div className='mb-3'>
-                    <label htmlFor='exampleInputEmail1' className='form-label'>
-                        Email address
-                    </label>
-                    <input
-                        type='email'
-                        className='form-control'
-                        id='exampleInputEmail1'
-                        aria-describedby='emailHelp'
-                        ref={email}
-                    />
-                    <div id='emailHelp' className='form-text'>
-                        We'll never share your email with anyone else.
+        <section className='vh-100 mt-5'>
+            <div className='container-fluid h-custom'>
+                <div className='row d-flex justify-content-center align-items-center h-100'>
+                    <div className='col-md-9 col-lg-6 col-xl-5'>
+                        <img
+                            src='https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp'
+                            className='img-fluid'
+                            alt='MicroTask Login'
+                        />
+                    </div>
+                    <div className='col-md-8 col-lg-6 col-xl-4 offset-xl-1 '>
+                        <form className='mt-5' onSubmit={handleSubmit}>
+                            <div className='d-flex flex-row align-items-center justify-content-center justify-content-lg-start'>
+                                <p className='lead fw-normal mb-0 me-3'>
+                                    Sign in with
+                                </p>
+                                <i className='fa fa-facebook-square fa-2x mx-1'></i>
+
+                                <i className='fa fa-twitter-square fa-2x mx-1'></i>
+
+                                <i className='fa fa-google fa-2x mx-1'></i>
+                            </div>
+
+                            <div className='divider d-flex align-items-center my-4'>
+                                <p className='text-center fw-bold mx-3 mb-0'>
+                                    Or
+                                </p>
+                            </div>
+
+                            <div className='form-outline mb-4'>
+                                <input
+                                    type='email'
+                                    id='form3Example3'
+                                    className='form-control form-control-lg'
+                                    placeholder='Enter a valid email address'
+                                    ref={email}
+                                />
+                                <label
+                                    className='form-label'
+                                    htmlFor='form3Example3'
+                                >
+                                    Email address
+                                </label>
+                            </div>
+
+                            <div className='form-outline mb-3'>
+                                <input
+                                    type='password'
+                                    id='form3Example4'
+                                    className='form-control form-control-lg'
+                                    placeholder='Enter password'
+                                    ref={password}
+                                />
+                                <label
+                                    className='form-label'
+                                    htmlFor='form3Example4'
+                                >
+                                    Password
+                                </label>
+                            </div>
+
+                            <div className='d-flex justify-content-between align-items-center'>
+                                <div className='form-check mb-0'>
+                                    <input
+                                        className='form-check-input me-2'
+                                        type='checkbox'
+                                        value=''
+                                        id='form2Example3'
+                                    />
+                                    <label
+                                        className='form-check-label'
+                                        htmlFor='form2Example3'
+                                    >
+                                        Remember me
+                                    </label>
+                                </div>
+                                <a href='#!' className='text-body'>
+                                    Forgot password?
+                                </a>
+                            </div>
+
+                            <div className='text-center text-lg-start mt-4 pt-2'>
+                                <button
+                                    type='button'
+                                    className='btn btn-primary btn-lg text-center'
+                                    style={{
+                                        paddingLeft: "2.5rem",
+                                        paddingRight: "2.5rem",
+                                    }}
+                                    onClick={handleSubmit}
+                                >
+                                    Login
+                                </button>
+                                <p className='small fw-bold mt-2 pt-1 mb-0'>
+                                    Don't have an account?{" "}
+                                    <a href='/signup' className='link-danger'>
+                                        Sign Up
+                                    </a>
+                                </p>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div className='mb-3'>
-                    <label
-                        htmlFor='exampleInputPassword1'
-                        className='form-label'
-                    >
-                        Password
-                    </label>
-                    <input
-                        type='password'
-                        className='form-control'
-                        id='exampleInputPassword1'
-                        ref={password}
-                    />
-                </div>
-                <button type='submit' className='btn btn-primary'>
-                    Submit
-                </button>
-            </form>
-        </div>
+            </div>
+        </section>
     );
 };
 
