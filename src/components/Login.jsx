@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from "react";
 import axios from "axios";
-import { useNavigate,Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 const Login = (props) => {
     const email = useRef();
@@ -67,14 +67,14 @@ const Login = (props) => {
                             <div className='form-outline mb-4'>
                                 <input
                                     type='email'
-                                    id='form3Example3'
+                                    id='emailInput'
                                     className='form-control form-control-lg'
                                     placeholder='Enter a valid email address'
                                     ref={email}
                                 />
                                 <label
                                     className='form-label mt-1'
-                                    htmlFor='form3Example3'
+                                    htmlFor='emailInput'
                                 >
                                     Email address
                                 </label>
@@ -83,14 +83,14 @@ const Login = (props) => {
                             <div className='form-outline mb-3'>
                                 <input
                                     type='password'
-                                    id='form3Example4'
+                                    id='emailPassword'
                                     className='form-control form-control-lg'
                                     placeholder='Enter password'
                                     ref={password}
                                 />
                                 <label
                                     className='form-label mt-1'
-                                    htmlFor='form3Example4'
+                                    htmlFor='emailPassword'
                                 >
                                     Password
                                 </label>
@@ -111,7 +111,10 @@ const Login = (props) => {
                                         Remember me
                                     </label>
                                 </div>
-                                <Link href='#!' className='text-body text-decoration-none '>
+                                <Link
+                                    href='#!'
+                                    className='text-body text-decoration-none '
+                                >
                                     Forgot password?
                                 </Link>
                             </div>
@@ -130,7 +133,10 @@ const Login = (props) => {
                                 </button>
                                 <p className='small fw-bold mt-2 pt-1 mb-0'>
                                     Don't have an account?{" "}
-                                    <Link href='/signup' className='link-danger'>
+                                    <Link
+                                        href='/signup'
+                                        className='link-danger'
+                                    >
                                         Sign Up
                                     </Link>
                                 </p>
